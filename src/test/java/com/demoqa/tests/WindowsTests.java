@@ -18,10 +18,10 @@ public class WindowsTests extends TestBase {
 
     @BeforeEach
     public void precondition() {
-        sidePanel = new SidePanel(driver);
-        alerts = new AlertsPage(driver);
-        frame = new FramePage(driver);
-        new HomePage(driver).selectAlertsFrameWindows();
+        sidePanel = new SidePanel(app.driver);
+        alerts = new AlertsPage(app.driver);
+        frame = new FramePage(app.driver);
+        new HomePage(app.driver).selectAlertsFrameWindows();
     }
 
     @Test
@@ -48,7 +48,7 @@ public class WindowsTests extends TestBase {
     @DisplayName("Verify to - Text in new Window is displayed")
     public void newWindowHandlesTest() {
         sidePanel.selectBrowserWindows();
-        new BrowserWindowsPage(driver)
+        new BrowserWindowsPage(app.driver)
                 .switchToNewWindow(1)
                 .verifyNewWindowTitle("This is a sample page");
     }

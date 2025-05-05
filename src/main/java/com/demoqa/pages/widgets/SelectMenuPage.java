@@ -59,8 +59,10 @@ public class SelectMenuPage extends BasePage {
     public SelectMenuPage standardMultiSelect(String car, String color) {
         WebElement selectedCar = driver.findElement(By.cssSelector("[value='" + car + "']"));
         click(selectedCar);
-        //System.out.println(selectedCar.getCssValue("background-color"));
-        Assertions.assertTrue(selectedCar.getCssValue("background-color").contains(color));
+    //    System.out.println(selectedCar.getCssValue("background-color"));
+           Assertions.assertTrue(selectedCar.getCssValue("background-color").contains(color));
         return this;
     }
 }
+
+//   [background-color='rgba(25, 103, 210, 1)']

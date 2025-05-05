@@ -14,9 +14,9 @@ public class InteractionsTests extends TestBase {
 
     @BeforeEach
     public void precondition() {
-        sidePanel = new SidePanel(driver);
-        droppable = new DroppablePage(driver);
-        new HomePage(driver).selectInteractions();
+        sidePanel = new SidePanel(app.driver);
+        droppable = new DroppablePage(app.driver);
+        new HomePage(app.driver).selectInteractions();
     }
 
     @Test
@@ -33,3 +33,9 @@ public class InteractionsTests extends TestBase {
                 .verifyDropped("Dropped!");
     }
 }
+
+// mvn clean test -Dtest=InteractionsTests#actionDragMeTest - run method
+// mvn clean test -Dtest=InteractionsTests - run class
+// mvn clean test -Dgroups=suite - run with tag
+
+

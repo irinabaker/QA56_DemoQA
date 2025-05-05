@@ -1,6 +1,9 @@
 package com.demoqa.pages;
 
 import com.demoqa.core.BasePage;
+import com.demoqa.pages.elements.LinksPage;
+import com.demoqa.pages.elements.TextBoxPage;
+import com.demoqa.pages.forms.PracticeFormPage;
 import com.demoqa.pages.interactions.DroppablePage;
 import com.demoqa.pages.widgets.*;
 import com.demoqa.pages.windows.AlertsPage;
@@ -102,5 +105,37 @@ public class SidePanel extends BasePage {
     public AutoCompletePage selectAutoComplete() {
         clickWithJS(autoComplete,0,600);
         return new AutoCompletePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Practice Form']")
+    WebElement practiceForm;
+
+    public PracticeFormPage selectPracticeForm() {
+        click(practiceForm);
+        return new PracticeFormPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Links']")
+    WebElement links;
+
+    public LinksPage selectLinks() {
+        clickWithJS(links,0,400);
+        return new LinksPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Broken Links - Images']")
+    WebElement brokenLinksImages;
+
+    public LinksPage selectBrokenLinksImages() {
+        clickWithJS(brokenLinksImages,0,500);
+        return new LinksPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Text Box']")
+    WebElement textBox;
+
+    public TextBoxPage selectTextBox() {
+        click(textBox);
+        return new TextBoxPage(driver);
     }
 }
